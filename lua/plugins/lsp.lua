@@ -5,12 +5,8 @@ return {
     opts = {
       servers = {
         omnisharp = false,
+        roslyn_ls = true,
       },
     },
-  },
-  -- Roslyn
-  {
-    "seblj/roslyn.nvim",
-    ft = { "cs", "razor" },
   },
 }
