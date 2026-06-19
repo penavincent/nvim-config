@@ -1,19 +1,12 @@
 return {
-  -- nvim-lspconfig settings
   {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        omnisharp = false,
-        roslyn_ls = true,
-        ["*"] = {
-          capabilities = {
-            workspace = {
-              didChangeWatchedFiles = {
-                dynamicRegistration = true,
-              },
-            },
-          },
+        roslyn_ls = {
+          on_attach = function(client)
+            client.server_capabilities.diagnosticProvider = false
+          end,
         },
       },
     },
