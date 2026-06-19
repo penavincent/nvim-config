@@ -15,3 +15,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
+
+vim.api.nvim_clear_autocmds({ group = "nvim.terminal", event = "TermClose" })
